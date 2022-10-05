@@ -1,10 +1,11 @@
-async function foo() {
-  return await bar();
+async function main () {
+  return makePromise()
 }
 
-async function bar() {
-  await Promise.resolve();
-  throw new Error('BEEP BEEP');
+async function makePromise () {
+  await Promise.resolve()
+  // throw new Error('BEEP BEEP')
+  return Promise.reject(new Error('some error'))
 }
 
-foo().catch(error => console.log(error.stack));
+main().catch(error => console.log(error.stack))
