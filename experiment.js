@@ -1,5 +1,5 @@
 async function main () {
-  return makePromise()
+  return await makePromise()
 }
 
 async function makePromise () {
