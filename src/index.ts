@@ -158,3 +158,10 @@ const config: Linter.Config = {
 }
 
 export = config
+
+export function foo (): void {
+  let a: Set<number> | undefined = new Set()
+  if (a?.has(2)) {
+    console.log('asdf')
+  }
+}
