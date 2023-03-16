@@ -415,11 +415,11 @@ test('configs of equivalents are supersets of upstream', (t) => {
   equivalents.forEach((ruleName) => {
     const standardRuleConfig = standardRules[ruleName]
     const ourRuleConfig = ourRules[`@typescript-eslint/${ruleName}`]
-    const diff = justDiff({ _: standardRuleConfig }, { _: ourRuleConfig })
+    const diff = justDiff({ [ruleName]: standardRuleConfig }, { [ruleName]: ourRuleConfig })
     diff.forEach((diff) => {
       if (diff.op !== 'add') {
         t.fail()
-        t.log(ruleName, diff)
+        t.log({ diff, standardRuleConfig, ourRuleConfig })
       }
       t.pass()
     })
