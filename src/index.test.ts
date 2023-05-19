@@ -519,6 +519,10 @@ test('our configuration is compatible with the plugin and parser at bottom of pe
     ])
   )
 
+  config.parserOptions = {
+    project: './tsconfig.json'
+  }
+
   const eslint = new ESLint({
     useEslintrc: false,
     overrideConfig: config
