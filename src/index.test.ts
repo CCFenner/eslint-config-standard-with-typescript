@@ -509,8 +509,8 @@ test('our configuration is compatible with the plugin and parser at bottom of pe
 
   const config = structuredClone(exported)
 
-  config.parser = typescriptEslintBottomParser
   config.plugins = [typescriptEslintBottomPlugin]
+  config.parser = typescriptEslintBottomParser
 
   config.rules = Object.fromEntries(
     Object.entries(ourRules).map(([name, config]) => [
